@@ -33,45 +33,38 @@ public class Restaurant implements Features{
 	String getMenu(){
 		return Arrays.toString(menu) ;
 	}
-	
-	
-	@Override
-	public String inputString(){
-		Scanner input = new Scanner(System.in) ;
-		return input.nextLine() ;
-	}
-	
-	@Override
-	public int inputInt() throws InputMismatchException{
-		Scanner input = new Scanner(System.in) ;
-		return input.nextInt() ;
-	}
 
 	@Override
 	public int getCurrentPeople(){
 		return numOfPeople ;
 	}
-
+	
 	@Override
-	public int plusPeople(){
-		System.out.print("請輸入增加人數 : ") ;
-		int addNum = inputInt() ;
-		if (addNum > 0){
-			return numOfPeople += addNum ;
-		}else{
-			throw new ArithmeticException() ;
-		}
-	}
-
-	@Override
-	public int minusPeople(){
-		System.out.print("請輸入減少人數 : ") ;
-		int minusNum = inputInt() ;
-		if (minusNum > 0){
-			return numOfPeople -= minusNum ;
-		}else{
-			throw new ArithmeticException() ;
-		}
+	public Scanner input(){
+		return new Scanner(System.in) ;
 	}
 	
+	@Override
+	public String inputString(){
+		String inputString = input().nextLine() ;
+		return inputString ;
+	}
+
+	@Override
+	public int inputInt() throws InputMismatchException{
+		int inputInt = input().nextInt() ;
+		return inputInt ;
+	}
+
+	@Override
+	public int AdjustOfPeople(){
+		System.out.println("請輸入增減人數") ;
+		int adjustNum = inputInt() ;
+		if (adjustNum > 0){
+			numOfPeople += adjustNum ;
+		}else {
+			numOfPeople -= adjustNum ;
+		}
+		return numOfPeople ;
+	}	
 }

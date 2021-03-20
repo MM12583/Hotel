@@ -10,7 +10,7 @@ public class SystemTest{
 		
 		do{
 			try{
-				Gordon.plusPeople() ;
+				Gordon.AdjustOfPeople() ;
 				continueInput = false ;
 			}catch (InputMismatchException var1){
 				System.out.println("請輸入數字") ;
@@ -26,10 +26,10 @@ public class SystemTest{
 	
 	
 	public static void imformation(Features oFeatures){
-		
-		System.out.println("店名" + ((Restaurant)oFeatures).getRestaurantName());
-		System.out.println("目前有 " + ((Restaurant)oFeatures).getCurrentPeople() + "名賓客");
-		System.out.println(((Restaurant)oFeatures).getMenu());
+		System.out.println("---------------------");
+		System.out.println("店名" + ((Restaurant)oFeatures).getRestaurantName()) ;
+		System.out.println("目前有 " + ((Restaurant)oFeatures).getCurrentPeople() + "名賓客") ;
+		System.out.println(((Restaurant)oFeatures).getMenu()) ;
 	}
 	
 }
