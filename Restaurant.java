@@ -12,13 +12,13 @@ public class Restaurant implements Features{
 	
 	Restaurant(){
 		System.out.print("請輸入店名 : ") ;
-		restaurantName = inputString() ;
+		restaurantName = new Scanner(System.in).nextLine() ;
 	}
 	
 	String[] addMenu(){
 		System.out.print("請輸入增加菜色 : ") ;
 		String[]newMenu = new String[menu.length+1] ;
-		newMenu[menu.length] = inputString() ;
+		newMenu[menu.length] = new Scanner(System.in).nextLine() ;
 		for(int i =0 ; i < menu.length ;i ++){
 			newMenu[i] = menu[i];
 		}
@@ -38,28 +38,12 @@ public class Restaurant implements Features{
 	public int getCurrentPeople(){
 		return numOfPeople ;
 	}
-	
-	@Override
-	public Scanner input(){
-		return new Scanner(System.in) ;
-	}
-	
-	@Override
-	public String inputString(){
-		String inputString = input().nextLine() ;
-		return inputString ;
-	}
 
 	@Override
-	public int inputInt() throws InputMismatchException{
-		int inputInt = input().nextInt() ;
-		return inputInt ;
-	}
-
-	@Override
-	public int AdjustOfPeople(){
+	public int AdjustOfPeople()throws InputMismatchException{
 		System.out.println("請輸入增減人數") ;
-		int adjustNum = inputInt() ;
+		int adjustNum = new Scanner(System.in).nextInt() ;
+		
 		if (adjustNum > 0){
 			numOfPeople += adjustNum ;
 		}else {

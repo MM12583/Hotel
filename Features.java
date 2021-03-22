@@ -1,7 +1,4 @@
-package facility;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
+package facility ;
 
 public interface Features{
 	
@@ -9,9 +6,6 @@ public interface Features{
 	public abstract int getCurrentPeople() ;
 		
 	// д@пы
-	public abstract String inputString() ;
-	public abstract int inputInt() throws InputMismatchException ;
-	public abstract Scanner input() ;
 	public abstract int AdjustOfPeople() ;
 
 }
